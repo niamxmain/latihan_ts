@@ -1,0 +1,21 @@
+var isFinished = false;
+console.log(isFinished, typeof isFinished);
+var price = 150.34;
+console.log(price, typeof price);
+var numOfEmployees = 25;
+console.log(numOfEmployees, typeof numOfEmployees);
+var progLang = "TypeScript";
+console.log(progLang, typeof progLang);
+var university = ["UT", "UGM", "ITB"];
+console.log(university, typeof university);
+var employee;
+employee = [1, "zaky", true, 3, "niam"];
+console.log(employee, typeof employee);
+var Color;
+(function (Color) {
+    Color[Color["Black"] = 2] = "Black";
+    Color[Color["Blue"] = 3] = "Blue";
+    Color[Color["Yellow"] = 4] = "Yellow";
+    Color[Color["Green"] = 3] = "Green";
+    Color[Color["Red"] = 9] = "Red";
+})(Color || (Color = {}));
