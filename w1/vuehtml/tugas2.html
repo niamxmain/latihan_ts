@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="app">
+      <h3>Nama Anggota Kelompok</h3>
+      <ol>
+        <li v-for="(mk, index) in daftarMK" v-bind:key="index">
+          <span>{{ mk.text }}</span>
+          <span>
+            <button v-on:click="onOff(index)">{{ mk.button }}</button>
+          </span>
+        </li>
+      </ol>
+    </div>
+
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script>
+      const { createApp } = Vue;
+      const App = {
+        data() {
+          return {
+            daftarMK: [
+              {
+                text: "M. Qotimun Ni'am - 24210001",
+                button: "Hapus",
+              },
+              { text: "Jhon Doe - 24122024", button: "Hapus" },
+            ],
+          };
+        },
+        methods: {
+          onOff(index) {
+            this.daftarMK.splice(index, 1);
+          },
+        },
+      };
+      createApp(App).mount("#app");
+    </script>
+  </body>
+</html>

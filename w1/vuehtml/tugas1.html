@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #f4f4f4;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+      }
+
+      #app {
+        background-color: #ffffff;
+        border-radius: 8px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        padding: 20px;
+        text-align: center;
+        font-size: 24px;
+        color: #333;
+      }
+
+      p {
+        margin: 0;
+      }
+
+      .angka {
+        font-weight: bold;
+        color: #e74c3c;
+      }
+    </style>
+  </head>
+  <body>
+    <p id="app">
+      Waktu ujian tinggal <span class="angka">{{waktu}}</span> detik
+    </p>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script>
+      const { createApp } = Vue;
+      const App = {
+        data() {
+          return {
+            waktu: 5400,
+          };
+        },
+        mounted() {
+          setInterval(() => {
+            if (this.waktu > 0) {
+              this.waktu--;
+            }
+          }, 1000);
+        },
+      };
+
+      createApp(App).mount("#app");
+    </script>
+  </body>
+</html>
